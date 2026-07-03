@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "tick_film",
+  "version": "${version}",
+  "name": "Tick Film",
+  "description": "Animate time!",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/tick_film/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [
+      "com.kreadex.tickFilm.client.TickFilmDataGenerator"
+    ],
+    "client": [
+      "com.kreadex.tickFilm.client.TickFilmClient"
+    ],
+    "main": [
+      "com.kreadex.tickFilm.TickFilm"
+    ]
+  },
+  "mixins": [
+    "tick_film.mixins.json",
+    {
+      "config": "tick_film.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
