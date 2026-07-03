@@ -8,8 +8,6 @@ import com.kreadex.tickFilm.data.EasingMode;
 import com.kreadex.tickFilm.data.EasingType;
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.arguments.StringArgumentType;
-import net.minecraft.command.permission.Permission;
-import net.minecraft.command.permission.PermissionLevel;
 import net.minecraft.server.command.CommandManager;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.command.TickCommand;
@@ -47,7 +45,7 @@ public class TickCommandMixin {
                         )
 
                         .then(CommandManager.literal("animate")
-                                .requires(source -> source.getPermissions().hasPermission(new Permission.Level(PermissionLevel.MODERATORS)))
+                                .requires(source -> source.hasPermissionLevel(2))
 
                                 .then(CommandManager.argument("target",
                                                 com.mojang.brigadier.arguments.IntegerArgumentType.integer())

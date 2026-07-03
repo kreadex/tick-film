@@ -36,9 +36,8 @@ public abstract class SoundSystemMixin {
 
             if (category == SoundCategory.MUSIC
                     || category == SoundCategory.RECORDS
-                    || category == SoundCategory.VOICE
-                    || category == SoundCategory.MASTER) {
-                return;
+                    || category == SoundCategory.VOICE) {
+                continue;
             }
 
             entry.getValue().run(source -> {

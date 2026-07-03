@@ -40,14 +40,14 @@ public class TickEngine {
             server.getTickManager()
                     .setTickRate(tickRate);
 
-            float safeTickRate = Math.max(1.0f, tickRate);
-            server.getTickManager().setTickRate(safeTickRate);
-
             if (t >= 1.0) {
-                server.getTickManager().setTickRate(Math.max(1.0f, (float) anim.target));
+
+                server.getTickManager()
+                        .setTickRate((float) anim.target);
 
                 if (anim.target <= 0.0) {
-                    server.getTickManager().setFrozen(true);
+                    server.getTickManager()
+                            .setFrozen(true);
                 }
 
                 TickAnimator.stop();
